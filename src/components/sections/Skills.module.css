@@ -1,0 +1,68 @@
+.band {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.list {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Travel never drops below 1240px so 17 chips stay spaced apart on narrow screens. */
+.item {
+  --travel: max(100cqw + 196px, 1240px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  animation: along 48s linear infinite;
+}
+
+.band:hover .item,
+.band:focus-within .item {
+  animation-play-state: paused;
+}
+
+@keyframes along {
+  from {
+    transform: translateX(calc(100cqw + 56px - var(--travel)));
+  }
+  to {
+    transform: translateX(calc(100cqw + 56px));
+  }
+}
+
+@media (min-width: 768px) {
+  .band {
+    height: 200px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .band {
+    height: auto;
+    overflow: visible;
+    padding: 40px 24px 0;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    height: auto;
+  }
+
+  .item {
+    position: static;
+    height: auto;
+    transform: none;
+  }
+}

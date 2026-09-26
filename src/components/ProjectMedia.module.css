@@ -1,0 +1,193 @@
+.house {
+  position: relative;
+  width: 200px;
+  height: 220px;
+  transform-style: preserve-3d;
+  transform: rotateX(-16deg);
+  animation: rotateHouse 18s linear infinite;
+}
+
+@keyframes rotateHouse {
+  from {
+    transform: rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.wall {
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  top: 100px;
+  width: 200px;
+  height: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(20, 20, 22, 0.55);
+}
+
+.wallFront {
+  transform: translateZ(80px);
+}
+
+.wallBack {
+  transform: translateZ(-80px) rotateY(180deg);
+}
+
+.wallSide {
+  left: 20px;
+  width: 160px;
+}
+
+.wallLeft {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.wallRight {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.door {
+  position: absolute;
+  box-sizing: border-box;
+  left: 82px;
+  bottom: 0;
+  width: 36px;
+  height: 62px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.window {
+  position: absolute;
+  box-sizing: border-box;
+  top: 34px;
+  width: 34px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background:
+    rgba(245, 245, 247, 0.08)
+    linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)) center / 1px 100% no-repeat;
+}
+
+.windowFrontLeft {
+  left: 22px;
+}
+
+.windowFrontRight {
+  left: 144px;
+}
+
+.windowBackLeft {
+  left: 40px;
+}
+
+.windowBackRight {
+  left: 126px;
+}
+
+.windowSide {
+  left: 62px;
+}
+
+.gable {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 200px;
+  height: 70px;
+}
+
+.gable svg {
+  display: block;
+}
+
+.gableFront {
+  transform: translateZ(80px);
+}
+
+.gableBack {
+  transform: translateZ(-80px);
+}
+
+.roof {
+  position: absolute;
+  box-sizing: border-box;
+  top: -25px;
+  width: 122px;
+  height: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(28, 28, 31, 0.7)
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 15px);
+}
+
+.roofLeft {
+  left: -11px;
+  transform: rotateZ(-35deg) rotateX(90deg);
+}
+
+.roofRight {
+  left: 89px;
+  transform: rotateZ(35deg) rotateX(90deg);
+}
+
+.chimney {
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(20, 20, 22, 0.8);
+  transform: translateX(132px) translateY(28px) translateZ(-30px);
+}
+
+.base {
+  position: absolute;
+  box-sizing: border-box;
+  left: -40px;
+  top: 80px;
+  width: 280px;
+  height: 280px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  transform: rotateX(90deg);
+}
+
+.chartPath {
+  stroke-dasharray: 440;
+  stroke-dashoffset: 0;
+  animation: drawChart 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes drawChart {
+  0% {
+    stroke-dashoffset: 440;
+  }
+  45%,
+  60% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 440;
+  }
+}
+
+.bar {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: growBar 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes growBar {
+  0%,
+  100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}

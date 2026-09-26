@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0b;
+  --color-surface: #111113;
+  --color-surface-sunken: #0d0d0f;
+  --color-surface-raised: #141416;
+  --color-surface-hover: #161618;
+  --color-surface-active: #1f1f22;
+  --color-fg: #f5f5f7;
+  --color-fg-hover: #ffffff;
+  --color-fg-muted: #a1a1a6;
+  --color-fg-subtle: #86868b;
+  --color-fg-faint: #6e6e73;
+  --color-line: #1c1c1f;
+  --color-line-card: #232326;
+  --color-line-card-hover: #3a3a3f;
+  --color-line-chip: #2a2a2e;
+  --color-line-ghost: #2e2e33;
+  --color-line-ghost-hover: #48484e;
+
+  /* Display sizes scale linearly from the 390px artboard to the 1440px artboard. */
+  --text-hero: clamp(68px, 33.83px + 8.762vw, 160px);
+  --text-hero--line-height: 0.9;
+  --text-section: clamp(46px, 36.34px + 2.476vw, 72px);
+  --text-section--line-height: 1;
+  --text-contact: clamp(64px, 37.26px + 6.857vw, 136px);
+  --text-contact--line-height: 0.92;
+
+  --ease-smooth: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --animate-rise: rise 1s var(--ease-smooth) both;
+  --animate-char-in: char-in 0.7s var(--ease-smooth) both;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-pulse-soft: pulse-soft 2.4s ease-in-out infinite;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes char-in {
+    from { opacity: 0; transform: translateY(40%); filter: blur(8px); }
+    to { opacity: 1; transform: none; filter: none; }
+  }
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+  @keyframes pulse-soft {
+    50% { opacity: 0.3; }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-instrument-sans), system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-fg);
+  outline-offset: 3px;
+}
+
+/* Hidden only when JS can reveal it again, so no-JS visitors still see everything. */
+@media (scripting: enabled) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.9s var(--ease-smooth),
+      transform 0.9s var(--ease-smooth);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
