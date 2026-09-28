@@ -30,5 +30,3 @@ src/
 - Accessibility: semantic landmarks, visible focus rings, keyboard-reachable tooltips and menu,
   and every animation respects `prefers-reduced-motion`.
 - Canvas loops pause when off-screen or when the tab is hidden.
-
-Design spec: [`DESIGN.md`](DESIGN.md).
