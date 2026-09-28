@@ -42,3 +42,7 @@ next-env.d.ts
 
 # internal recruitment source material, not part of the site
 GUIDEBOOK_ILITS_27_*.md
+
+# local-only project notes
+CLAUDE.md
+DESIGN.md
