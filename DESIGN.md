@@ -1,14 +1,14 @@
-# DESIGN.md — ILITS Portfolio
+# DESIGN.md — Portfolio
 
 Written spec of the approved design canvas. **The canvas is the source of truth**;
 this file mirrors it so code can be built without re-reading 100KB of mockup HTML.
 If the two disagree, the canvas wins — fix this file.
 
-- Canvas: https://claude.ai/artifact/DHaJP3BMyQCaTRjsUuoh2F ("ILITS Portfolio")
+- Canvas: https://claude.ai/artifact/DHaJP3BMyQCaTRjsUuoh2F ("Portfolio")
 - Artboards: `Main.dc.html` (Desktop, 1440 × 4180) · `Mobile.dc.html` (Mobile, 390 × 4610)
 - Look: **dark monochrome**, editorial. Hero modelled on v0-optimus (grid lines, giant serif
   headline with a cycling word, tool marquee); particle-ring background after antigravity.google.
-- Rejected directions (don't bring back): ASCII ball hero, ILITS-specific copy, color accents.
+- Rejected directions (don't bring back): ASCII ball hero, specific copy, color accents.
 
 ---
 
